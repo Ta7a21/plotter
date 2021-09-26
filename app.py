@@ -1,7 +1,6 @@
 from PyQt5 import QtWidgets, uic, QtGui
 import sys
 from plot import plot
-import pyqtgraph as pg
 
 
 class Ui(QtWidgets.QMainWindow):
@@ -9,19 +8,6 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()
         uic.loadUi("app.ui", self)
         self.plotButton.clicked.connect(lambda: plot(self))
-
-    # def closeEvent(self, event):
-    #     # Confirmation message when the user closes the app
-    #     reply = QtWidgets.QMessageBox()
-    #     reply.setText("Do you really want to close the app?")
-    #     reply.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
-    #     reply.setWindowTitle("Close")
-    #     reply = reply.exec()
-
-    #     if reply == QtWidgets.QMessageBox.Yes:
-    #         event.accept()
-    #     else:
-    #         event.ignore()
 
 
 app = QtWidgets.QApplication(sys.argv)
