@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <widget class="QWidget" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,7 +16,6 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="2" column="1">
      <widget class="QLabel" name="label_5">
@@ -73,7 +72,6 @@ padding-left: 10px;}</string>
       <property name="styleSheet">
        <string notr="true">QGraphicsView{
 margin-right: 5px;
-margin-top: 5px;
 border: 1px solid black;}</string>
       </property>
      </widget>
@@ -207,14 +205,13 @@ padding-left: 10px;}</string>
      </widget>
     </item>
    </layout>
-  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>910</width>
-     <height>22</height>
+     <height>0</height>
     </rect>
    </property>
   </widget>

@@ -41,7 +41,6 @@ class Graph:
     def generateCoeffs(self, poly_function):
         terms = []
         for term in re.findall(r"[+-]?\d*[*\/]?\w+\^?\d*", poly_function):
-            print(term)
             term = term.replace("^", "**")
             terms.append(term)
 
