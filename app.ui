@@ -63,7 +63,7 @@ padding-left: 10px;}</string>
      </widget>
     </item>
     <item row="0" column="2" rowspan="9">
-     <widget class="QGraphicsView" name="graphicsView">
+     <widget class="PlotWidget" name="graph">
       <property name="minimumSize">
        <size>
         <width>500</width>
@@ -82,7 +82,7 @@ border: 1px solid black;}</string>
      <widget class="QLabel" name="label_2">
       <property name="maximumSize">
        <size>
-        <width>90</width>
+        <width>100</width>
         <height>30</height>
        </size>
       </property>
@@ -99,7 +99,7 @@ padding-left: 10px;}</string>
      <widget class="QLabel" name="label_6">
       <property name="maximumSize">
        <size>
-        <width>220</width>
+        <width>225</width>
         <height>30</height>
        </size>
       </property>
@@ -113,7 +113,7 @@ padding-left: 10px;}</string>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLineEdit" name="minValue">
+     <widget class="QLineEdit" name="min">
       <property name="maximumSize">
        <size>
         <width>80</width>
@@ -127,7 +127,7 @@ margin-left: 10px;}</string>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="maxValue">
+     <widget class="QLineEdit" name="max">
       <property name="maximumSize">
        <size>
         <width>70</width>
@@ -152,7 +152,7 @@ margin-left: 10px;}</string>
 padding-left: 10px;}</string>
       </property>
       <property name="text">
-       <string>Enter your function:</string>
+       <string>Enter your function</string>
       </property>
      </widget>
     </item>
@@ -169,7 +169,7 @@ padding-left: 10px;}</string>
 padding-left: 10px;}</string>
       </property>
       <property name="text">
-       <string>- Type your function. (e.g. 5*x^3 + 2*x)</string>
+       <string>- Type your function (e.g. 5*x^3 + 2*x)</string>
       </property>
      </widget>
     </item>
@@ -177,7 +177,7 @@ padding-left: 10px;}</string>
      <widget class="QLabel" name="label_7">
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>220</width>
         <height>30</height>
        </size>
       </property>
@@ -220,6 +220,13 @@ padding-left: 10px;}</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
