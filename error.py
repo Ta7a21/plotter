@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMessageBox
 
-def raiseError(self, txt):
-    QMessageBox.critical(self, "Error", txt)
+
+def error(self, error_message):
+    QMessageBox.critical(self, "Error", error_message)

@@ -111,7 +111,7 @@ padding-left: 10px;}</string>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLineEdit" name="min">
+     <widget class="QLineEdit" name="min_value">
       <property name="maximumSize">
        <size>
         <width>80</width>
@@ -125,7 +125,7 @@ margin-left: 10px;}</string>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="max">
+     <widget class="QLineEdit" name="max_value">
       <property name="maximumSize">
        <size>
         <width>70</width>
