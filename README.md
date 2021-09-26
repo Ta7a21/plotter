@@ -46,7 +46,6 @@ $python app.py
 2.**_Running the tests_**
 
 ```sh
-$cd testing-qt/tests
 $pytest test.py
 ```
 
