@@ -41,11 +41,17 @@ class Graph:
     def generateFunction(self):
         self.expression = self.expression.replace("^", "**")
 
-        # Convert the expression of string type to general mathematical expression
+        x, y = self.convertStringToMathExpression()
+
+        function_of_x = self.convertMathExpressionToFunction(x, y)
+
+        return function_of_x(self.x)
+
+    def convertStringToMathExpression(self):
         x = symbols("x")
         y = sympify(self.expression)
 
-        # Convert the SymPy expression to an expression that can be numerically evaluated
-        lam_x = lambdify(x, y, modules=["numpy"])
+        return x, y
 
-        return lam_x(self.x)
+    def convertMathExpressionToFunction(self, x, y):
+        return lambdify(x, y, modules=["numpy"])

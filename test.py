@@ -18,55 +18,55 @@ def app(qtbot):
 
 def test_format_1(app, qtbot):
     app.expression.setText("3x^3+6*x^2+x")
-    app.min.setText("0")
-    app.max.setText("10")
+    app.min_value.setText("0")
+    app.max_value.setText("10")
 
     with pytest.raises(ValueError, match="Invalid format"):
-        Graph(app.expression.text(), app.min.text(), app.max.text())
+        Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
 def test_format_2(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x*3")
-    app.min.setText("0")
-    app.max.setText("10")
+    app.min_value.setText("0")
+    app.max_value.setText("10")
 
     with pytest.raises(ValueError, match="Invalid format"):
-        Graph(app.expression.text(), app.min.text(), app.max.text())
+        Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
-def test_min(app, qtbot):
+def test_min_value(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
-    app.min.setText("a")
-    app.max.setText("10")
+    app.min_value.setText("a")
+    app.max_value.setText("10")
 
     with pytest.raises(ValueError):
-        Graph(app.expression.text(), app.min.text(), app.max.text())
+        Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
-def test_max(app, qtbot):
+def test_max_value(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
-    app.min.setText("0")
-    app.max.setText("10H")
+    app.min_value.setText("0")
+    app.max_value.setText("10H")
 
     with pytest.raises(ValueError):
-        Graph(app.expression.text(), app.min.text(), app.max.text())
+        Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
-def test_min_max(app, qtbot):
+def test_min_value_max_value(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
-    app.min.setText("10")
-    app.max.setText("0")
+    app.min_value.setText("10")
+    app.max_value.setText("0")
 
     with pytest.raises(ValueError):
-        Graph(app.expression.text(), app.min.text(), app.max.text())
+        Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
 def test_pass(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
-    app.min.setText("0")
-    app.max.setText("10")
+    app.min_value.setText("0")
+    app.max_value.setText("10")
 
     try:
-        Graph(app.expression.text(), app.min.text(), app.max.text())
+        Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
     except ValueError as err:
         pytest.fail(err.args[0])

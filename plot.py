@@ -1,15 +1,17 @@
 from Graph import Graph
-from error import error
+from error import errorPOPUP
 
 
 def plot(self):
     try:
         graph_plot = Graph(
-            expression=self.expression.text(), min_value=self.min_value.text(), max_value=self.max_value.text()
+            expression=self.expression.text(),
+            min_value=self.min_value.text(),
+            max_value=self.max_value.text(),
         )
     except ValueError as err:
         error_message = err.args[0]
-        error(self, error_message)
+        errorPOPUP(self, error_message)
         return
 
     self.graph.clear()
