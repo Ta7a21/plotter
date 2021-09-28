@@ -17,11 +17,11 @@ def app(qtbot):
 
 
 def test_format_1(app, qtbot):
-    app.expression.setText("3x^3+6*x^2+x")
+    app.expression.setText("")
     app.min_value.setText("0")
     app.max_value.setText("10")
 
-    with pytest.raises(ValueError, match="Invalid format"):
+    with pytest.raises(ValueError, match="Function is empty"):
         Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
@@ -34,30 +34,30 @@ def test_format_2(app, qtbot):
         Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
-def test_min_value(app, qtbot):
+def test_min_value_max_value_1(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
     app.min_value.setText("a")
     app.max_value.setText("10")
 
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError,match="Min and max values should be integers"):
         Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
-def test_max_value(app, qtbot):
+def test_min_value_max_value_2(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
-    app.min_value.setText("0")
-    app.max_value.setText("10H")
+    app.min_value.setText("")
+    app.max_value.setText("10")
 
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError,match="Min and max values should be given"):
         Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 
-def test_min_value_max_value(app, qtbot):
+def test_min_value_max_value_3(app, qtbot):
     app.expression.setText("3*x^3+6*x^2+x")
     app.min_value.setText("10")
     app.max_value.setText("0")
 
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError,match="Max value should be greater than min value"):
         Graph(app.expression.text(), app.min_value.text(), app.max_value.text())
 
 

@@ -13,10 +13,11 @@ class Graph:
         self.y = self.generateFunction()
 
     def validateExpression(self, expression):
+        expression = expression.replace(" ", "")
+        
         if expression == "":
             raise ValueError("Function is empty")
 
-        expression = expression.replace(" ", "")
 
         pattern = "^(-)?((\d([*\/][xX])?)*|(([xX])(\^\d)?)|((\d)*[*\/][xX])(\^\d)?)([-\+]((\d([*\/][xX])?)*|(([xX])(\^\d)?)|((\d)*[*\/][xX])(\^\d)?))*$"
         result = re.match(pattern, expression)
